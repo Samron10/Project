@@ -17,6 +17,6 @@ jobs:
         with:
           args: >
               -Dsonar.organization=samron10
-              -Dsonar.projectKey=Samron10_Project
+              -Dsonar.projectKey=samron10
 
               
