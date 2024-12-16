@@ -15,10 +15,10 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@v1
-    
-        env :
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    
-
-     
+        with:
+          projectBaseDir: .
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
