@@ -1,7 +1,11 @@
 name: Super-Linter
 
 on: push
-
+env:
+ SONAR_PROJECT_KEY : Samron10_Project
+ SONAR_ORGANIZATION : Samron10
+ SONAR_TOKEN : 0f6cdf1ca861312a82086449c3fdc8fc48046c9c
+    
 jobs:
   super-lint:
     name: Lint code base
@@ -18,8 +22,8 @@ jobs:
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@v1
         with:
-          projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
-          organization: ${{ secrets.SONAR_ORGANIZATION }}
-          token: ${{ secrets.SONAR_TOKEN }}    
+          projectKey: ${{ env.SONAR_PROJECT_KEY }}
+          organization: ${{ env.SONAR_ORGANIZATION }}
+          token: ${{ env.SONAR_TOKEN }}    
 
      
