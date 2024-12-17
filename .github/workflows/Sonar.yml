@@ -11,6 +11,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
+          
+      - name: Set JAVA_HOME
+        run: echo "JAVA_HOME=/path/to/your/jdk" >> $GITHUB_ENV
+      - name: Add Java to PATH
+        run: echo "$JAVA_HOME/bin" >> $GITHUB_PATH   
 
       - uses: actions/checkout@v3
         with:
