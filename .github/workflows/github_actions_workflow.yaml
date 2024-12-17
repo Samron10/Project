@@ -1,4 +1,4 @@
-name: Sonar
+name: "sonar_cloud_scan_github_actions"
 on:
   workflow_dispatch:
 
@@ -6,22 +6,11 @@ jobs:
   DemoSonarCloudSCan:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-          
-      - name: Set JAVA_HOME
-        run: echo "JAVA_HOME=/path/to/your/jdk" >> $GITHUB_ENV
-      - name: Add Java to PATH
-        run: echo "$JAVA_HOME/bin" >> $GITHUB_PATH   
-
       - uses: actions/checkout@v3
         with:
             fetch-depth: 0
       - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@v1.5
+        uses: sonarsource/sonarcloud-github-action@master
         env:
             GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -29,7 +18,5 @@ jobs:
           args: >
               -Dsonar.organization=samron10
               -Dsonar.projectKey=Samron10_Project
-              -X
-              
 
-          
+
