@@ -19,6 +19,7 @@ jobs:
           args: >
               -Dsonar.organization=samron10
               -Dsonar.projectKey=Samron10_Project
-              -Dsonar.exclusions=**/test/**,**/node_modules/** # Optional: Exclude unnecessary directories
+              -Dsonar.exclusions=**/test/**,**/node_modules/**
+              
 
 
